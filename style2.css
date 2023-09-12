@@ -1,0 +1,538 @@
+body {
+    margin: 0;
+    font-family: Segoe UI, Helvetica Neue, Helvetica, Lucida Grande, Arial, Ubuntu, Cantarell, Fira Sans, sans-serif;
+   
+
+}
+
+* {
+    box-sizing: border-box;
+    margin: 0;
+}
+
+body>div {
+    /* 100% DE LA HAUTTEUR DU PARENT */
+    width: 100%;
+    height: 100vh;
+    background-color: #e3e2de;
+
+
+}
+
+.color-bar {
+    height: 13%;
+    background-color: #00a884;
+}
+
+main {
+    top: 50%;
+    left: 50%;
+    position: absolute;
+    z-index: 9;
+    width: 83%;
+    height: 97%;
+    background-color: #ffffff;
+    transform: translate(-50%, -50%);
+
+
+}
+
+header {
+
+    background-color: #f0f2f5;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    /* padding: 10px 15px; */
+
+    width: 100%;
+    height: 8%;
+    position: relative;
+
+
+}
+
+
+.header-left {
+
+    width: 35%;
+    height: 100%;
+    border-right: 1px solid rgba(0, 0, 0, 0.1);
+    /* padding-left: 15px; */
+
+
+
+}
+
+
+
+.header-left .header-left-container {
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+    padding: 10px 20px;
+
+    align-items: center;
+
+}
+
+.header-left .header-left-container img {
+    height: 40px;
+    width: 40px;
+    object-fit: cover;
+    border-radius: 100%;
+}
+
+.header-left-buttons {
+    display: flex;
+    gap: 22px;
+
+}
+
+.header-left-buttons button {
+    border: 0;
+    font-size: 18px;
+}
+
+.header-left-buttons button.green-circle-btn {
+    position: relative;
+}
+
+.header-left-buttons button .green-circle {
+    display: block;
+    width: 8px;
+    height: 8px;
+    border-radius: 100%;
+    background-color: green;
+    right: 0;
+    top: -3px;
+    position: absolute;
+}
+
+.header-right {
+    width: 65%;
+    /* display: flex; */
+
+
+
+}
+
+.header-left,
+.header-right {
+
+    height: 100%;
+}
+
+
+.header-right .header-right-container {
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+    padding: 2px 20px;
+
+    align-items: center;
+}
+
+
+.header-right-container img {
+    height: 40px;
+    width: 40px;
+
+    object-fit: cover;
+    border-radius: 100%;
+}
+
+.header-right-buttons button {
+
+    border: 0;
+    font-size: 18px;
+
+}
+
+
+.header-right-container h3 {
+    margin-right: auto;
+    margin-left: 20px;
+    font-size: 20px;
+    font-family: 'Times New Roman', Times, serif;
+
+}
+
+.flex-flex-row {
+    display: flex;
+    flex-direction: row;
+    height: 100vh;
+
+}
+
+
+
+aside {
+    background-color: white;
+    height: 100vh;
+    width: 35%;
+    overflow: scroll;
+
+
+
+}
+
+
+.contact-chat {
+    display: flex;
+    align-items: center;
+    padding: 10px;
+    width: 100%;
+}
+
+.contact-chat:hover {
+    background: rgba(181, 177, 177, 0.5);
+}
+
+
+
+.contact-chat .contact-name {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+
+}
+
+.contact-name h4 {
+    font-size: 16px;
+    font-weight: bold;
+}
+
+.contact-name .hour {
+    font-size: 10.9px;
+    font-weight: 400;
+    color: gray;
+}
+
+.contact-name {
+    font-size: 16px;
+    font-weight: bold;
+}
+
+.contact-chat img {
+    height: 40px;
+    width: 40px;
+    object-fit: cover;
+    border-radius: 100%
+}
+
+.contact-message {
+    padding-bottom: 10px;
+}
+
+.contact-chat .contact-data {
+    margin: 0 10px;
+    width: 100%;
+}
+
+.contact-data .contact-message {
+    display: flex;
+    justify-content: space-between;
+    vertical-align: middle;
+    border-bottom: 1px solid rgb(178, 178, 178)
+}
+
+.contact-message p {
+    overflow: hidden;
+    text-overflow: ellipsis;
+    height: 20px;
+}
+
+.contact-message .count-message h6 {
+    padding: 4px 8px;
+    border-radius: 50%;
+    background-color: rgb(24, 210, 3);
+    color: white;
+}
+
+
+
+
+
+
+
+article {
+    height: 100%;
+    width: 65%;
+    background-image: url(image/background.png);
+    background-position: center;
+    background-attachment: fixed;
+    background-repeat: no-repeat;
+    background-size: cover;
+    overflow: hidden;
+    position: relative;
+    display: flex;
+    flex-direction: column;
+    
+}
+
+.massages-container {
+    display: flex;
+    flex-direction: column;
+    height: 100%;
+    padding: 0px 74px;
+    gap: 2px;
+}
+
+.messages-container-row {
+    display: flex;
+    flex-direction: row;
+    width: 100%;
+    height: auto;
+}
+
+.messages-container-row:has(.chat-box-message.mine) {
+
+    justify-content: flex-end;
+
+}
+
+.messages-container-row:has(.chat-box-message.received) {
+
+    justify-content: flex-start;
+
+}
+
+.chat-box-message {
+    min-width: 55px;
+    max-width: 40%;
+    padding: 8px 15px;
+
+
+
+    border-bottom-left-radius: 8px;
+    border-bottom-right-radius: 8px;
+    border-top-right-radius: 8px;
+
+}
+
+.chat-box-message.received {
+    background-color: white;
+}
+
+.chat-box-message.mine {
+    background-color: #d9fdd3;
+}
+
+.times-message {
+    font-size: 11px;
+    color: #9bc0af;
+    position: relative;
+    right: -3px;
+    bottom: -6px;
+}
+
+.chat-times {
+    margin-left: 391px;
+    font-size: 16px;
+    color: rgb(190, 185, 185);
+}
+
+
+.massages-container .non-lu {
+    display: inline-block;
+
+    margin-left: 359px;
+    margin-right: 333px;
+    margin-top: 169px;
+    border: 2px solid white;
+    border-radius: 15px;
+    background-color: white;
+    text-align: center;
+}
+
+/*
+.massages-container .non-lu p {
+    font-family: Arial, Helvetica, sans-serif;
+    font-size: 12px;
+    text-align: center;
+    text-transform: uppercase;
+    margin-top: 10px;
+
+
+} */
+
+.search {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 4px 20px;
+}
+
+.search-bar {
+    margin: 5px;
+    padding: 8px 15px;
+    width: 85%;
+    display: flex;
+    align-items: center;
+    height: 25px;
+    border-radius: 15px;
+    background-color: #f0f2f5;
+}
+
+.search-bar i {
+    margin-right: 30px;
+}
+
+.search-bar input {
+    width: 100%;
+    background-color: #f0f2f5;
+    border: none;
+
+}
+
+.search-bar input::placeholder {
+    font-size: 16px;
+    padding: 10px 15px;
+}
+
+/* input[type="text"] {
+    font-size: 20px;
+    border: none;
+    outline: none;
+    background-color: white;
+    padding: 5px;
+    margin-top: 5px;
+    border-radius: 90px;
+    font-weight: 400;
+    cursor: text;
+} */
+
+.seach-barre i {
+    font-size: 2rem;
+
+    position: absolute;
+    left: 20px;
+    /* transform: translateX(50%); */
+}
+
+/* metttre en forme la barre de sroll de la section profil et notification des messages */
+::-webkit-scrollbar {
+    width: 6px;
+}
+
+::-webkit-scrollbar-track {
+    background: none;
+}
+
+::-webkit-scrollbar-thumb {
+    background-color: #f0f2f5;
+}
+
+::-webkit-scrollbar-thumb:hover {
+    background-color: #8888;
+}
+
+/* .header-right img {
+    position: absolute;
+    top: 0;
+    padding: 0;
+    height: 50px;
+    width: 50px;
+    overflow: hidden;
+    object-fit: cover;
+
+} */
+
+.chatavatar img {
+    position: relative;
+    overflow: hidden;
+    width: 50px;
+    height: 50px;
+    border-radius: 100%;
+    top: 2px;
+    margin-left: 5px;
+    object-fit: cover;
+
+
+}
+
+
+.chatavatartop {
+    position: absolute;
+    top: 0;
+    left: 0;
+    height: 90%;
+    width: 100%;
+    overflow: hidden;
+    object-fit: cover;
+    flex: 1;
+
+}
+
+.chatside-contain {
+    height: auto;
+    width: auto;
+}
+
+.chatsides-row {
+
+    display: flex;
+    align-items: center;
+    justify-content: flex-start;
+
+}
+
+
+.chatsides:hover {
+    background-color: rgb(178, 180, 179);
+    opacity: 0.2;
+}
+
+.chatsides:nth-child(2) {
+    background-color: rgb(94, 92, 90);
+}
+
+footer {
+
+    /* padding: 10px 15px;*/
+    background-color: #f0f2f5;
+    width: 65%;
+    height: 8vh;
+    left: 35%;
+    bottom: -100px;
+    position: absolute;
+    border-bottom: 1px solid #f0f2f5;
+    position: fixed;
+}
+
+footer .footer-search-bar {
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+    align-items: center;
+
+    padding: 15px 10px;
+
+}
+
+.footer-search-bar button {
+    border: 0;
+    font-size: 22px;
+    gap: 100px;
+    margin-left: 14px;
+    margin-right: 15px;
+    MARGIN-TOP: 15px;
+    transform: translate(-50%, -50%);
+}
+
+.footer-search-bar input {
+    border-radius: 15px;
+    background-color: #ffffff;
+    height: 33px;
+    width: 800px;
+
+    border: 0;
+    text-decoration: none;
+
+}
+
+.footer-search-bar input::placeholder {
+    font-size: 20px;
+    padding-left: 50px;
+}
